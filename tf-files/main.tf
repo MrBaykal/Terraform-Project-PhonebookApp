@@ -109,7 +109,7 @@ resource "aws_db_instance" "db-server" {
   engine                      = "mysql"
   engine_version              = "8.0.28"
   username                    = "admin"
-  password                    = "Emre_196"
+  password                    = "Emre_123456"
   monitoring_interval         = 0
   multi_az                    = false
   port                        = 3306
@@ -120,7 +120,7 @@ resource "aws_db_instance" "db-server" {
 resource "github_repository_file" "dbendpoint" {
   content             = aws_db_instance.db-server.address
   file                = "dbserver.endpoint"
-  repository          = "Phonebook"
+  repository          = "project-terraform-phonebook-app"
   overwrite_on_create = true
   branch              = "main"
 }
